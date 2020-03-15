@@ -1,0 +1,16 @@
+language: python
+
+install:
+  - pip install lxml requests
+
+script:
+  - python3 setup.py sdist bdist_wheel
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
+  on:
+    tags: true
