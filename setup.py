@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name="shiza-utils",
-    version="0.1.1",
+    version="0.1.2",
     author="Nick Korotysh",
     author_email="kolchaprogrammer@list.ru",
     packages=setuptools.find_packages(),

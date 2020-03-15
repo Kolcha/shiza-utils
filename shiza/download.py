@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import cgi
-from lxml import html
+import lxml.html
 
 
 def _parse_release_id(link):
@@ -9,7 +9,7 @@ def _parse_release_id(link):
 
 
 def _parse_torrent_ids(content):
-    tree = html.fromstring(content)
+    tree = lxml.html.fromstring(content)
     nodes = tree.xpath('//li/a[@data-toggle="tab"]')
     return [int(n.get('href')[9:]) for n in nodes]
 

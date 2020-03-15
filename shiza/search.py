@@ -9,7 +9,7 @@ def _generate_search_url(query):
     return template % (urllib.parse.urlencode({"q": query, "t": ""}))
 
 
-def _parse_releases_links(content):
+def parse_releases_links(content):
     tree = lxml.html.fromstring(content)
     nodes = tree.xpath('//article[@class="grid-card"]/a[@class="card-box"]')
     return [n.get('href') for n in nodes]
@@ -19,4 +19,4 @@ def search(query, session):
     r = session.get(_generate_search_url(query))
     if r.status_code != 200:
         return []
-    return _parse_releases_links(r.content)
+    return parse_releases_links(r.content)
