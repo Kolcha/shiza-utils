@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ["download", "search", "session"]
+__all__ = ["download", "release", "search", "session"]
