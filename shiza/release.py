@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 
 url_re = re.compile(r"^https?:\/\/shiza-project\.com\/releases\/view\/(\d+)\/?$")

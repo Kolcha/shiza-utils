@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import cgi
 import lxml.html
 
@@ -20,7 +18,7 @@ def _generate_torrent_links(release, torrents):
 
 
 def _get_torrent_file_name(headers):
-    value, params = cgi.parse_header(headers['Content-Disposition'])
+    _, params = cgi.parse_header(headers['Content-Disposition'])
     return params['filename']
 
 
