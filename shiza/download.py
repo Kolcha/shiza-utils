@@ -19,7 +19,7 @@ def _generate_torrent_links(release, torrents):
 
 def _get_torrent_file_name(headers):
     _, params = cgi.parse_header(headers['Content-Disposition'])
-    return params['filename']
+    return params['filename'].encode('latin1').decode('utf-8')
 
 
 def _download_torrent_file(link, session):
