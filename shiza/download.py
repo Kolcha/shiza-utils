@@ -13,7 +13,7 @@ def _parse_torrent_ids(content):
 
 
 def _generate_torrent_links(release, torrents):
-    template = "http://shiza-project.com/download/torrents/%d/%d"
+    template = "https://shiza-project.com/download/torrents/%d/%d"
     return [template % (release, tid) for tid in torrents]
 
 

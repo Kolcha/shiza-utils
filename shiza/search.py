@@ -3,7 +3,7 @@ import lxml.html
 
 
 def _generate_search_url(query):
-    template = "http://shiza-project.com/releases/search?%s"
+    template = "https://shiza-project.com/releases/search?%s"
     return template % (urllib.parse.urlencode({"q": query, "t": ""}))
 
 

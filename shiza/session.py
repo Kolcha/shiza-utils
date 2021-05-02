@@ -2,7 +2,7 @@ import requests
 
 
 def login(email, passw):
-    login_url = "http://shiza-project.com/accounts/login"
+    login_url = "https://shiza-project.com/accounts/login"
 
     session = requests.session()
 
@@ -21,5 +21,5 @@ def login(email, passw):
 
 
 def logout(session):
-    session.post("http://shiza-project.com/accounts/logout")
+    session.post("https://shiza-project.com/accounts/logout")
     session.close()
