@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="shiza-utils",
-    version="0.1.4",
+    version="0.1.5",
     author="Nick Korotysh",
     author_email="kolchaprogrammer@list.ru",
     description="download torrents from shiza-project.com",
