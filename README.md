@@ -1,12 +1,9 @@
 simple Python package to download torrent files from https://shiza-project.com/
 
 ```python
-import shiza.session
-import shiza.download
+import shiza
 
-s = shiza.session.login('email@example.com', 'password')
-ts = shiza.download.download_torrents('https://shiza-project.com/releases/view/492', s)
-shiza.session.logout(s)
+ts = shiza.download_torrents('https://shiza-project.com/releases/fairy-tail-tv-1/')
 
 for name, data in ts:
     with open(name, "wb") as f:
