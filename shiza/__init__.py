@@ -1,7 +1,7 @@
 import re
 import requests
 
-_link_re = re.compile(r"^https:\/\/shiza-project\.com\/releases\/([\w-]+)\/?$")
+_link_re = re.compile(r"^https:\/\/shiza-project\.com\/releases\/([@\w-]+)\/?$")
 
 
 def match_link(link):
