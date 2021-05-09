@@ -21,7 +21,7 @@ query fetchRelease($slug: String!) {
 }
 """
     v = {"slug": slug}
-    p = {"operationName": "fetchRelease", "query": q, "variables": v}
+    p = {"query": q, "variables": v}
     r = session.post('https://shiza-project.com/graphql', json=p)
     if r.status_code != 200:
         return []

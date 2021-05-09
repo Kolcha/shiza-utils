@@ -13,6 +13,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     packages=setuptools.find_packages(),
-    install_requires=['lxml', 'requests'],
+    install_requires=['requests'],
     python_requires='>=3.6',
 )
