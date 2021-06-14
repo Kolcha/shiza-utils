@@ -26,6 +26,8 @@ query fetchRelease($slug: String!) {
     if r.status_code != 200:
         return []
     j = r.json()
+    if not j['data']['release']:
+        return []
     return [t["file"]["url"] for t in j['data']['release']['torrents']]
 
 
