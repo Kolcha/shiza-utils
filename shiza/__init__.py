@@ -28,7 +28,7 @@ query fetchRelease($slug: String!) {
     j = r.json()
     if not j['data']['release']:
         return []
-    return [t["file"]["url"] for t in j['data']['release']['torrents']]
+    return [t["file"]["url"] for t in j['data']['release']['torrents'] if t["file"]]
 
 
 def _get_torrent_file_name(link):
