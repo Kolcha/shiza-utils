@@ -4,11 +4,11 @@ import requests
 _link_re = re.compile(r"^https:\/\/shiza-project\.com\/releases\/([@\w-]+)\/?$")
 
 
-def match_link(link):
+def match_link(link: str) -> bool:
     return _link_re.match(link) is not None
 
 
-def _get_torrent_links(slug, session):
+def _get_torrent_links(slug: str, session: requests.Session) -> list[str]:
     q = """
 query fetchRelease($slug: String!) {
     release(slug: $slug) {
@@ -31,17 +31,17 @@ query fetchRelease($slug: String!) {
     return [t["file"]["url"] for t in j['data']['release']['torrents'] if t["file"]]
 
 
-def _get_torrent_file_name(link):
+def _get_torrent_file_name(link: str) -> str:
     return link[link.rfind('=')+1:]
 
 
-def _download_torrent_file(link, session):
+def _download_torrent_file(link: str, session: requests.Session) -> tuple[str, bytes]:
     r = session.get(link)
     filename = _get_torrent_file_name(link)
     return (filename, r.content)
 
 
-def download_torrents(link, session=None):
+def download_torrents(link: str, session: requests.Session = None) -> list[tuple[str, bytes]]:
     m = _link_re.match(link)
     if not m:
         return []
